@@ -4,13 +4,48 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
-	theme = "vscode_dark",
+-- Path to overriding theme and highlights files
+local highlights = require "lua.highlights"
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+M.ui = {
+  -- Basic theming
+  theme = "vscode_dark",
+  theme_toggle = { "vscode_dark", "one_light" },
+  transparency = true,
+  hl_override = highlights.override,
+  hl_add = highlights.add,
+
+  telescope = { style = "borderless" }, -- borderless / borderedi
+
+  statusline = {
+    theme = "vscode_colored"
+  },
+
+  nvdash = {
+    load_on_startup = true,
+
+    header = {
+      "           ▄ ▄                   ",
+      "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
+      "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
+      "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
+      "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
+      "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
+      "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
+      "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
+      "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
+    },
+
+    buttons = {
+      { "  Find File", "Spc f f", "Telescope find_files" },
+      { "  Recent Files", "Spc f o", "Telescope oldfiles" },
+      { "  Find Word", "Spc f w", "Telescope live_grep" },
+      { "  Bookmarks", "Spc b m", "Telescope marks" },
+      { "  Themes", "Spc t h", "Telescope themes" },
+      { "  Mappings", "Spc c h", "NvCheatsheet" },
+    },
+  },
+
 }
 
 return M
