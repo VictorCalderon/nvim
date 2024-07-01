@@ -21,6 +21,7 @@ return {
     opts = {
       ensure_installed = {
         "lua-language-server",
+        "typescript-language-server",
       },
     },
   },
@@ -36,5 +37,30 @@ return {
         "css",
       },
     },
+  },
+
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
+
+  -- Auto complete
+  {
+    "hrsh7th/nvim-cmp",
+  },
+
+  -- Git
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
+
+  -- Best plugin ever
+  {
+    "eandrju/cellular-automaton.nvim",
+    lazy = false,
   },
 }

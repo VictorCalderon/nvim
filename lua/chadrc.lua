@@ -9,8 +9,8 @@ local highlights = require "configs.highlights"
 
 M.ui = {
   -- Basic theming
-  theme = "vscode_dark",
-  theme_toggle = { "vscode_dark", "one_light" },
+  theme = "github_dark",
+  theme_toggle = { "github_dark", "one_light" },
   transparency = true,
   hl_override = highlights.override,
   hl_add = highlights.add,
