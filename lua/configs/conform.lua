@@ -5,6 +5,9 @@ local options = {
     html = { "prettier" },
     go = { "goimports", "gofmt" },
     javascript = { { "prettierd", "prettier" } },
+    python = { "ruff", "isort" },
+    rust = { "rustfmt", lsp_format = "fallback" },
+    terraform = { "terraform_fmt" }
   },
 
   format_on_save = {
