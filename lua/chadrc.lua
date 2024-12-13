@@ -6,7 +6,7 @@ local options = {
 
   -- Basic theing
   base46 = {
-    theme = "monochrome",
+    theme = "flexoki",
     hl_add = {},
     hl_override = {},
     integrations = {},

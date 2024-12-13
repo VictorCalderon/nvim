@@ -1,10 +1,9 @@
- -- put this in your main init.lua file ( before lazy setup )
- vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
+-- put this in your main init.lua file ( before lazy setup )
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
 
- -- put this after lazy setup
- dofile(vim.g.base46_cache .. "defaults")
- dofile(vim.g.base46_cache .. "statusline")
-
+-- put this after lazy setup
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
 
 return {
   {
@@ -22,13 +21,18 @@ return {
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css", "terraform"
-  		},
-  	},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "terraform",
+        "yaml",
+      },
+    },
   },
 
   -- Git
@@ -43,22 +47,22 @@ return {
     lazy = false,
   },
 
- "nvim-lua/plenary.nvim",
+  "nvim-lua/plenary.nvim",
 
- {
-   "nvchad/ui",
+  {
+    "nvchad/ui",
     config = function()
       require "nvchad"
-    end
- },
+    end,
+  },
 
- {
+  {
     "nvchad/base46",
     lazy = true,
     build = function()
       require("base46").load_all_highlights()
     end,
- },
+  },
 
- "nvzone/volt", -- optional, needed for theme switcher
+  "nvzone/volt", -- optional, needed for theme switcher
 }
